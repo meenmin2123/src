@@ -4,9 +4,8 @@
 # 변수명 = 값
 num = 10
 num2 = 10.234
-string = 'hello world'
+string = "hello world"
 
 print(num)
 print(num2)
 print(string)
-

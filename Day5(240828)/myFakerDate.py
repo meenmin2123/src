@@ -1,5 +1,6 @@
 from faker import Faker
-fake = Faker('ko-KR')
+
+fake = Faker("ko-KR")
 name = fake.name()
 print(name)
 

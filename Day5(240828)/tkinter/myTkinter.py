@@ -5,7 +5,7 @@ from tkinter import *
 root = Tk()
 
 # 이 부분에 컴포넌트들을 배치
-root.title("처음 만든 윈도우")   # 제목
-root.geometry("500x200")        # 창 크기 
+root.title("처음 만든 윈도우")  # 제목
+root.geometry("500x200")  # 창 크기
 
 root.mainloop()

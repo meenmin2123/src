@@ -1,14 +1,14 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-import time 
+import time
 
 # 웹 사이트 고정 창
 options = webdriver.ChromeOptions()
-options.add_argument("window-size=1600,1000")    # 너비와 높이를 고정으로 설정
+options.add_argument("window-size=1600,1000")  # 너비와 높이를 고정으로 설정
 
 driver = webdriver.Chrome(options=options)
-driver.get('https://ncov.kdca.go.kr/pot/index.do')
+driver.get("https://ncov.kdca.go.kr/pot/index.do")
 
 time.sleep(5)
 
@@ -22,10 +22,10 @@ time.sleep(5)
 #     print(f"* 텍스트:  {div.text}")
 #     print(f"* 링크 : {div.get_attribute('href')}")
 
-img1 = driver.find_elements(By.CSS_SELECTOR, 'div.item img')
+img1 = driver.find_elements(By.CSS_SELECTOR, "div.item img")
 
 for img in img1:
-    img_src = img.get_attribute('src')
+    img_src = img.get_attribute("src")
     print(f"* 이미지 url : {img_src}")
 
 time.sleep(20)

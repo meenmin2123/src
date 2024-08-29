@@ -2,11 +2,13 @@ import requests
 from bs4 import BeautifulSoup
 import time
 
+
 class Naver:
-    def __init__(self,title='', link1='',content=''):
+    def __init__(self, title="", link1="", content=""):
         self.title = title
         self.link1 = link1
         self.content = content
+
 
 class NaverBlogMa:
     def __init__(self):
@@ -19,17 +21,18 @@ class NaverBlogMa:
             res = li.get_text()
             self.blogList.append(res)
         print(f"블로그 링크 추가: {link}")
-    
+
     # 삭제
 
     # 조회
     def select(self):
         if not self.blogList:
             print("저장된 블로그 링크가 없습니다.")
-        else :
+        else:
             print("전체 링크 출력")
             for blog in self.blogList:
                 print(blog)
+
     # 수정
 
 
@@ -37,10 +40,12 @@ class NaverBlogMa:
 # 입력하는 검색창 get 요청을 하는 창
 naver = NaverBlogMa()
 
-resp = requests.get("https://search.naver.com/search.naver?ssc=tab.blog.all&sm=tab_jum&query=%EC%95%A0%ED%94%8C")
+resp = requests.get(
+    "https://search.naver.com/search.naver?ssc=tab.blog.all&sm=tab_jum&query=%EC%95%A0%ED%94%8C"
+)
 
-soup = BeautifulSoup(resp.text, 'html.parser')
-findLink = soup.find_all('a',class_='title_link')[0].text
+soup = BeautifulSoup(resp.text, "html.parser")
+findLink = soup.find_all("a", class_="title_link")[0].text
 
 
 # print(naver.add_blog(findLink))
@@ -53,33 +58,33 @@ print(findLink)
 #         print(li.get_text(string=True))
 #         time.sleep(2)
 
-title = soup.select('a.title_link')[0].text
+title = soup.select("a.title_link")[0].text
 print(f"select() : {title}")
 
-img = soup.select('img')[2]['src']
+img = soup.select("img")[2]["src"]
 print(f"select() img : {img}")
 
 # naver.add_blog(findLink)
 # print(naver.blogList)
 for li in naver.blogList:
-        print(li)
+    print(li)
 
 # 첫번째 이미지불러오기
-imageUrl = soup.find_all('img')[1]
+imageUrl = soup.find_all("img")[1]
 print(imageUrl)
 
 
-#--------------------------------------
-# 찾기 
+# --------------------------------------
+# 찾기
 # bxList = soup.find_all('li',class_='bx')
-#print(bxList)
+# print(bxList)
 
-# 첫번째 링크 텍스트 가져오기 
+# 첫번째 링크 텍스트 가져오기
 # title = soup.find_all('a',\
-#         class_='title_link')[0].text 
+#         class_='title_link')[0].text
 # print(title)
 
-# # 첫번째 이미지 URL 가져오기 
+# # 첫번째 이미지 URL 가져오기
 # imageUrl = soup.find_all('img')[2]['src']
 # print(imageUrl)
 
@@ -108,16 +113,14 @@ print(imageUrl)
 
 naverList = []
 
-title = soup.select('a.title_link')[0].text
-link1 = soup.select('a.title_link')[0]['href']
-img = soup.select('img')[2]['src']
+title = soup.select("a.title_link")[0].text
+link1 = soup.select("a.title_link")[0]["href"]
+img = soup.select("img")[2]["src"]
 
 # naver객체 생성
-obj = Naver(title=title,\
-            link1=link1,\
-            content=img)
+obj = Naver(title=title, link1=link1, content=img)
 
-# 리스트에 저장 
+# 리스트에 저장
 naverList.append(obj)
 
 print(naverList[0])

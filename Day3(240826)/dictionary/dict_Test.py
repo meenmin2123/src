@@ -38,9 +38,9 @@ print(f"좌석 선택 금액 : {val_sit}")
 total = val_obj + val_train + val_sit
 
 print(f"최종 금액 : {total}")
-""" 
+"""
 # -------------------------------------------------
-'''
+"""
 destination_prices = {
     "1. 춘천" : 5000,   # 춘천
     "2. 부산" : 30000,  # 부산
@@ -77,98 +77,92 @@ val_seat = selection_price(seat_prices, "좌석 종류를 선택해주세요.")
 total = val_obj + val_train + val_seat
 
 print(f"최종 금액 : {total}원")
-'''
-print('-'*30)
+"""
+print("-" * 30)
 
 # 2
-icecream = {
-    '메로나' : 1000,
-    '폴라포' : 1200,
-    '빵빠레' : 1800
-}
+icecream = {"메로나": 1000, "폴라포": 1200, "빵빠레": 1800}
 
 print(icecream)
-print('-'*30)
+print("-" * 30)
 
 # 3
-icecream['죠스바'] = 1200
-icecream['월드콘'] = 1500
+icecream["죠스바"] = 1200
+icecream["월드콘"] = 1500
 
 print(icecream)
-print('-'*30)
+print("-" * 30)
 
 # 4
-print("메로나 가격 : " , icecream['메로나'])
-print('-'*30)
+print("메로나 가격 : ", icecream["메로나"])
+print("-" * 30)
 
 # 5
-icecream['메로나'] = 1300
+icecream["메로나"] = 1300
 print(icecream)
-print('-'*30)
+print("-" * 30)
 
 # 6
-del icecream['메로나']
+del icecream["메로나"]
 print(icecream)
-print('-'*30)
+print("-" * 30)
 
 # 7
-inventory = {
-    '메로나' : [300, 20],
-    '비비빅' : [400, 3],
-    '죠스바' : [250, 100]
-}
+inventory = {"메로나": [300, 20], "비비빅": [400, 3], "죠스바": [250, 100]}
 
 print(inventory)
-print('-'*30)
+print("-" * 30)
 
 # 8
-print(inventory['메로나'][0], "원")
+print(inventory["메로나"][0], "원")
 
 # 9
-print("재고량 :",inventory['메로나'][1],"개")
+print("재고량 :", inventory["메로나"][1], "개")
 
 # 10
-inventory['월드콘'] = [500,7]
+inventory["월드콘"] = [500, 7]
 print(inventory)
 
-print('-'*30)
+print("-" * 30)
 # 11
 icecreamDict = {
-    '탱크보이' : 1200,
-    '폴라포' : 1200,
-    '빵빠레' : 1800,
-    '월드콘' : 1500,
-    '메로나' : 1000
+    "탱크보이": 1200,
+    "폴라포": 1200,
+    "빵빠레": 1800,
+    "월드콘": 1500,
+    "메로나": 1000,
 }
 
 print(icecreamDict.keys())
 
-print('-'*30)
+print("-" * 30)
+
+
 # 12
 def print_reverse(str):
-    return  ''.join(reversed(str))
+    return "".join(reversed(str))
 
-print(print_reverse('python'))
-print('-'*30)
+
+print(print_reverse("python"))
+print("-" * 30)
+
+
 # 13
 def print_score(scoreList):
     sumVal = sum(scoreList)
     return float(sumVal / len(scoreList))
 
-print(print_score(([1,2,3])))
+
+print(print_score(([1, 2, 3])))
 
 # 14
 print(icecreamDict.values())
 
 # 15
-print("총 합:",sum(icecreamDict.values()),"원")
+print("총 합:", sum(icecreamDict.values()), "원")
 
 # 16
-new_product = {
-    '팥빙수' : 2700,
-    '아맛나' : 1000
-}
+new_product = {"팥빙수": 2700, "아맛나": 1000}
 
 icecreamDict.update(new_product)
 print(icecreamDict)
-

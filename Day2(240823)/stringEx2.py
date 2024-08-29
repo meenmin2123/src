@@ -1,5 +1,5 @@
 # f문자열 포맷팅
-# f 문자는 대소문자 상관없음 
+# f 문자는 대소문자 상관없음
 # 문자열 시작 앞에 붙인다.
 name = "이서희"
 age = 20
@@ -7,7 +7,7 @@ text = f"제 이름: {name} 나이: {age}"
 print(text)
 
 # 변수만 들어가는 것이 아니라 계산식을
-# 작성할 수 있다. 
+# 작성할 수 있다.
 hours = 6
 minutes = hours * 60
 
@@ -33,6 +33,3 @@ print(center2)
 num = 10.1234
 text4 = f"{num:.2f}"
 print(text4)
-
-
-
