@@ -24,7 +24,6 @@ def read_csv_file_open(filepath):
             print(line)
     return list(reader)
 
-
 filepath = "C:/fullstack/part5/src/Day6(240829)/colab/myCsvEx1.csv"  # 절대 경로
 
 read_csv_file_open(filepath)
