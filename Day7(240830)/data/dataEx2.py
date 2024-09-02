@@ -60,11 +60,11 @@ base_time = int(str(int(now.split(' ')[1][:2])-1) + '00')
 # print(base_time)
 
 url = f"http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?serviceKey={serviceKey}&numOfRows=60&pageNo=1&dataType=json&base_date={base_date}&base_time={base_time}&nx={nx}&ny={ny}"
-# print(url)
+print("url : " , url)
 
 response = requests.get(url, verify=False)
 res = json.loads(response.text)
-# print(res)
+print("text : " , res)
     
 informations = dict()
 for items in res['response']['body']['items']['item'] :
